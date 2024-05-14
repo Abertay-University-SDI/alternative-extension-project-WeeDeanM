@@ -62,6 +62,15 @@ void TransitionLevel::update(float dt)
 	case State::PRE_THREE:
 		explain.setString("Move with WASD.\nMove in time with the claps.\nAvoid Tanks and Pits.\nThere is a checkpoint.\nYou will be assisted.\nKind of.\nHit Enter.\nGood Luck.");
 		break;
+	case State::PRE_FOUR:
+		explain.setString("Dean, you cooked");
+		break;
+	case State::PRE_FIVE:
+		bg.setTexture(&textMan->getTexture("bg_scroll"));
+		break;
+	case State::PRE_SIX:
+		bg.setTexture(&textMan->getTexture("bg_scroll"));
+		break;
 	case State::ENDGAME:
 		runResults* results = gameState->getResults();
 		std::string resultsString;

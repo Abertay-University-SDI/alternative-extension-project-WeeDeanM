@@ -17,7 +17,7 @@ public:
 	bool colliding(GameObject obj);
 	void reset();
 
-private:
+protected:
 	TextureManager* textMan;
 	Player p;
 	std::vector<GameObject> BGs;

@@ -87,6 +87,24 @@
     <ClCompile Include="LecturEH.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="exRunnerLevel1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelSelect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bird.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="exRunnerLevel2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="exRunnerLevel3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TransitionRunner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="README.txt">
@@ -161,6 +179,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LecturEH.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exRunnerLevel1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelSelect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bird.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exRunnerLevel2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exRunnerLevel3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TransitionRunner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -7,9 +7,14 @@
 #include <iostream>
 #include "Level.h"
 #include "TitleScreen.h"
+#include "LevelSelect.h"
 #include "TransitionLevel.h"
+#include "TransitionRunner.h"
 #include "RunnerLevel.h"
 #include "WizardLevel.h"
+#include "exRunnerLevel1.h"
+#include "exRunnerLevel2.h"
+#include "exRunnerLevel3.h"
 #include "TextureManager.h"
 #include "Framework/AudioManager.h"
 #include "Framework/GameState.h"
@@ -82,10 +87,15 @@ int main()
 	TextureManager* textureManager = new TextureManager();
 
 	TitleScreen TitleScreen(&window, &input, &gameState, &audioManager, textureManager);
+	LevelSelect levelSelect(&window, &input, &gameState, &audioManager, textureManager);
 	Level motivationLevel(&window, &input, &gameState, &audioManager, textureManager);
 	WizardLevel wizardLevel(&window, &input, &gameState, &audioManager, textureManager, 2);
 	TransitionLevel transLevel(&window, &input, &gameState, &audioManager, textureManager);
+	TransitionRunner transRunner(&window, &input, &gameState, &audioManager, textureManager);
 	RunnerLevel runnerLevel(&window, &input, &gameState, &audioManager, textureManager);
+	exRunnerLevel1 exRunnerLevel1(&window, &input, &gameState, &audioManager, textureManager);
+	exRunnerLevel2 exRunnerLevel2(&window, &input, &gameState, &audioManager, textureManager);
+	exRunnerLevel3 exRunnerLevel3(&window, &input, &gameState, &audioManager, textureManager);
 
 	// begin on the title screen
 	gameState.setCurrentState(State::TITLE);
@@ -116,6 +126,11 @@ int main()
 			TitleScreen.update(deltaTime);
 			TitleScreen.render();
 			break;
+		case State::SELECT:
+			levelSelect.handleInput(deltaTime);
+			levelSelect.update(deltaTime);
+			levelSelect.render();
+			break;
 		case State::LEVEL:
 			motivationLevel.handleInput(deltaTime);
 			motivationLevel.update(deltaTime);
@@ -131,6 +146,21 @@ int main()
 			wizardLevel.update(deltaTime);
 			wizardLevel.render();
 			break;
+		case State::RUNNER1:
+			exRunnerLevel1.handleInput(deltaTime);
+			exRunnerLevel1.update(deltaTime);
+			exRunnerLevel1.render();
+			break;
+		case State::RUNNER2:
+			exRunnerLevel2.handleInput(deltaTime);
+			exRunnerLevel2.update(deltaTime);
+			exRunnerLevel2.render();
+			break;
+		case State::RUNNER3:
+			exRunnerLevel3.handleInput(deltaTime);
+			exRunnerLevel3.update(deltaTime);
+			exRunnerLevel3.render();
+			break;
 		case State::PRE_ONE:
 		case State::PRE_TWO:
 		case State::PRE_THREE:
@@ -140,15 +170,33 @@ int main()
 			transLevel.update(deltaTime);
 			transLevel.render();
 			break;
+		case State::PRE_FOUR:
+		case State::PRE_FIVE:
+		case State::PRE_SIX:
+			transRunner.handleInput(deltaTime);
+			transRunner.update(deltaTime);
+			transRunner.render();
+			break;
 		case State::RESET:
 			// reset levels and state.
 			motivationLevel.reset();
 			runnerLevel.reset();
 			wizardLevel.reset();
+			exRunnerLevel1.reset();
+			exRunnerLevel2.reset();
+			exRunnerLevel3.reset();
 			// crank the music
 			audioManager.playMusicbyName("digitalLove");
 			gameState = GameState();
 			gameState.setCurrentState(State::TITLE);
+			break;
+		case State::RESET_RUNNER:
+			exRunnerLevel1.reset();
+			exRunnerLevel2.reset();
+			exRunnerLevel3.reset();
+			audioManager.playMusicbyName("digitalLove");
+			gameState = GameState();
+			gameState.setCurrentState(State::SELECT);
 			break;
 		}		
 		

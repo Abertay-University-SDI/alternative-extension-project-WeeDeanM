@@ -235,6 +235,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Background.cpp" />
+    <ClCompile Include="Bird.cpp" />
+    <ClCompile Include="exRunnerLevel1.cpp" />
+    <ClCompile Include="exRunnerLevel2.cpp" />
+    <ClCompile Include="exRunnerLevel3.cpp" />
     <ClCompile Include="Framework\Animation.cpp" />
     <ClCompile Include="Framework\AudioManager.cpp" />
     <ClCompile Include="Framework\BaseLevel.cpp" />
@@ -249,6 +253,7 @@
     <ClCompile Include="LecturEH.cpp" />
     <ClCompile Include="Lecturer.cpp" />
     <ClCompile Include="Level.cpp" />
+    <ClCompile Include="LevelSelect.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RunnerLevel.cpp" />
@@ -256,6 +261,7 @@
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="TitleScreen.cpp" />
     <ClCompile Include="TransitionLevel.cpp" />
+    <ClCompile Include="TransitionRunner.cpp" />
     <ClCompile Include="WizardLevel.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -264,6 +270,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.h" />
+    <ClInclude Include="Bird.h" />
+    <ClInclude Include="exRunnerLevel1.h" />
+    <ClInclude Include="exRunnerLevel2.h" />
+    <ClInclude Include="exRunnerLevel3.h" />
     <ClInclude Include="Framework\Animation.h" />
     <ClInclude Include="Framework\AudioManager.h" />
     <ClInclude Include="Framework\BaseLevel.h" />
@@ -278,12 +288,14 @@
     <ClInclude Include="LecturEH.h" />
     <ClInclude Include="Lecturer.h" />
     <ClInclude Include="Level.h" />
+    <ClInclude Include="LevelSelect.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="RunnerLevel.h" />
     <ClInclude Include="StageGrid.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="TitleScreen.h" />
     <ClInclude Include="TransitionLevel.h" />
+    <ClInclude Include="TransitionRunner.h" />
     <ClInclude Include="WizardLevel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -21,6 +21,12 @@ Player::Player()
 	}
 	damaged.addFrame(sf::IntRect(0, 0, 24, 24));
 	damaged.addFrame(sf::IntRect(15*24, 0, 24, 24));
+	for (int i = 0; i < 7; ++i)
+	{
+		duck.addFrame(sf::IntRect(i * 24.f + 408.f, 0.f, 24.f, 24.f));
+	}
+
+	duck.setFrameSpeed(1.f / 10.f);
 	damaged.setFrameSpeed(1.f / 4.f);
 	currentAnimation = &walk;
 	walk.setFrameSpeed(1.f / 10.f);
@@ -57,6 +63,18 @@ void Player::setKicking(float t)
 bool Player::canJump() const
 {
 	return jumpTime == 0;
+}
+
+void Player::setDucking()
+{
+	//lets the player duck when called inside level class
+	currentAnimation = &duck;
+}
+
+void Player::setWalking()
+{
+	//Will set the player back to walking animation when called
+	currentAnimation = &walk;
 }
 
 void Player::setFlipped(bool f)
